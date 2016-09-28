@@ -4,7 +4,7 @@
   "description": "Just a small change to the README, to try and trigger the git hook.",
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit"
+    "test": "nodeunit --config nodeunit.json"
   },
   "repository": {
     "type": "git",
