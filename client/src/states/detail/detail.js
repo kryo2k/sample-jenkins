@@ -6,7 +6,7 @@ angular.module('sampleJenkinsApp')
     controller: 'DetailCtrl as $thingCtrl',
     resolve: {
       currentThing: ['$stateParams','$thing', function ($stateParams, $thing) {
-        return $thing.getDetail($stateParams.id).catch(function (err) {
+        return $thing.detail($stateParams.id).catch(function (err) {
           return false;
         });
       }]

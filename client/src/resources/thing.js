@@ -4,7 +4,7 @@ angular.module('sampleJenkinsApp')
       id: '@_id'
     },
     {
-      getDetail: {
+      detail: {
         method: 'GET',
         params: {
         }
@@ -34,8 +34,8 @@ angular.module('sampleJenkinsApp')
     create: function (spec) {
       return Thing.create(spec).$promise;
     },
-    getDetail: function (id) {
-      return Thing.getDetail({ id: id }).$promise;
+    detail: function (id) {
+      return Thing.detail({ id: id }).$promise;
     },
     remove: function (id) {
       return Thing.remove({ id: id }).$promise;
