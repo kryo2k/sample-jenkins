@@ -4,7 +4,10 @@
   "description": "Just a small change to the README, to try and trigger the git hook.",
   "main": "index.js",
   "scripts": {
-    "test": "nodeunit --config nodeunit.json"
+    "test": "sh test.sh",
+    "stop": "sh stop.sh",
+    "start": "sh start.sh",
+    "restart": "sh restart.sh"
   },
   "repository": {
     "type": "git",
@@ -17,6 +20,16 @@
   },
   "homepage": "https://github.com/kryo2k/sample-jenkins#readme",
   "dependencies": {
-    "lodash": "^4.16.2"
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "connect-livereload": "^0.6.0",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "lodash": "^4.16.2",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.6.1",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.0"
   }
 }
