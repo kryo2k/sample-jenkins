@@ -43,6 +43,8 @@ describe('Thing', function () {
       assert.equal(doc.name,    name2);
       assert.equal(doc.created, created1);
     });
+
+    // MORE..
   });
 
   describe('Controller', function () {
