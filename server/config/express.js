@@ -35,9 +35,9 @@ module.exports = (app, server) => {
   app.use(morgan(config.isDevelopment ? 'dev' : 'common'));
   app.use(express.static(config.path.client));
 
-  if (config.isDevelopment) { // only use if in dev-mode
-    app.use(liveReload());
-  }
+  // if (config.isDevelopment) { // only use if in dev-mode
+  //   app.use(liveReload());
+  // }
 
   // configure all routes
   app.use('/api', require('../api'));

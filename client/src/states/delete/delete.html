@@ -1,0 +1,9 @@
+<p ng-if="!thing">Unable to locate the thing you're looking for.</p>
+
+<div ng-if="thing">
+
+  <p>Are you sure you want to delete {{thing.name|json}}?</p>
+
+  <button ng-click="confirm()">Yes</button>
+  <button ui-sref="app.default">No</button>
+</div>

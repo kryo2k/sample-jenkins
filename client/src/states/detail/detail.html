@@ -1,0 +1,28 @@
+<p ng-if="!thing">Unable to locate the thing you're looking for.</p>
+
+<div ng-if="thing">
+  <table>
+    <tr>
+      <td align="right"><b>ID:</b></td>
+      <td ng-bind="thing._id"></td>
+    </tr>
+    <tr>
+      <td align="right"><b>Name:</b></td>
+      <td><input type="text" ng-model="thing.name" /></td>
+    </tr>
+    <tr>
+      <td align="right"><b>Created:</b></td>
+      <td ng-bind="thing.created|date:'short'"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button ng-click="saveChanges()">Save changes</button>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<hr />
+
+<a ui-sref="app.default">Go back and view all</a>

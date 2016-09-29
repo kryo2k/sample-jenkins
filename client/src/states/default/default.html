@@ -1,0 +1,28 @@
+<div ng-init="reload()">
+  <div ng-switch on="isLoading">
+    <div ng-switch-when="true">
+      <p>Please wait, loading things..</p>
+    </div>
+
+    <div ng-switch-default>
+      <table ng-if="things.length > 0">
+        <tr ng-repeat="thing in things">
+          <td>
+            <a ui-sref="app.detail({ id: thing._id })" ng-bind="thing.name"></a>
+          </td>
+          <td>
+            <button ui-sref="app.delete({ id: thing._id})">Delete</button>
+          </td>
+        </tr>
+      </table>
+
+      <div ng-if="things.length === 0">
+        <p>There are currently no things available, try <a ui-sref="app.create">adding one</a>.</p>
+      </div>
+
+      <hr />
+
+      <a ui-sref="app.create">Create new</a>
+    </div>
+  </div>
+</div>

@@ -2,9 +2,12 @@
   "name": "sample-jenkins",
   "version": "1.0.0",
   "dependencies": {
+    "angular": "1.5.8",
+    "angular-messages": "latest",
+    "angular-resource": "latest",
+    "angular-route": "latest",
+    "angular-sanitize": "latest",
+    "angular-ui-router": "latest"
   },
-  "devDependencies": {
-  },
-  "resolutions": {
-  }
+  "devDependencies": {}
 }
