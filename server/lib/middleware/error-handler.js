@@ -6,8 +6,6 @@ isError = require('util').isError;
 
 module.exports = (_options) => {
   const options = merge({
-    showLineNumber: false,
-    showFileName:   false,
     showStackTrace: false,
     showMessage:    true
   }, _options);
@@ -26,19 +24,10 @@ module.exports = (_options) => {
       message: options.showMessage ? error.message : 'An error has occurred.'
     };
 
-    if(options.showLineNumber && error.hasOwnProperty('lineNumber')) {
-      response.line = error.lineNumber;
-      response.column = error.columnNumber;
-    }
-
-    if(options.showFileName && error.hasOwnProperty('fileName')) {
-      response.file = error.fileName;
-    }
-
     if(options.showStackTrace && error.hasOwnProperty('stack')) {
       response.stack = error.stack;
     }
 
-    return res.json(code, response);
+    return res.status(code).json(response);
   };
 }

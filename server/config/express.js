@@ -16,8 +16,6 @@ config         = require('./index');
 
 module.exports = (app, server) => {
 
-  const isDevOrTest = config.isDevelopment || config.isTesting;
-
   // setup view renderer
   app.engine('html', ejs.renderFile);
 
@@ -34,14 +32,8 @@ module.exports = (app, server) => {
   app.use(methodOverride());
   app.use(cookieParser());
   app.use(favicon(path.join(config.path.server, 'resource/favicon.png')));
-  app.use(express.static(config.path.client));
   app.use(morgan(config.isDevelopment ? 'dev' : 'common'));
-  app.use(errorHandler({
-    showLineNumber: isDevOrTest,
-    showFileName:   isDevOrTest,
-    showMessage:    isDevOrTest,
-    showStackTrace: isDevOrTest
-  }));
+  app.use(express.static(config.path.client));
 
   if (config.isDevelopment) { // only use if in dev-mode
     app.use(liveReload());
@@ -49,4 +41,9 @@ module.exports = (app, server) => {
 
   // configure all routes
   app.use('/api', require('../api'));
+
+  // add error handling at the very end
+  app.use(errorHandler({
+    showStackTrace: config.isDevelopment || config.isTesting
+  }));
 };

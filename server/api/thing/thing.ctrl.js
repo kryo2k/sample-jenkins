@@ -4,8 +4,6 @@ const
 Thing = require('./thing.model');
 
 exports.search = (req, res, next) => {
-  res.sendStatus(200);
-
   Thing.find(req.query, Thing.FIELDS_PROFILE.join(' '), (err, docs) => {
     if(err) return next(err);
     res.json(docs);

@@ -13,7 +13,7 @@ exports.thingFromParam = (_options) => {
   }, _options);
 
   // normalize the fields we'll be selecting according to what's defined in schema
-  options.fields = mongoUtil.schemaFields(Thing.schema, options.fields);
+  options.fields = mongoUtil.schemaFields(Thing.schema, options.fields).join(' ');
 
   return (req, res, next, paramValue, paramKey) => {
 
