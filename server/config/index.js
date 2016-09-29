@@ -36,9 +36,7 @@ module.exports = exports = merge(CONFIG, {
   path: {
     root:   rootPath,
     server: path.join(rootPath, 'server'),
-    client: path.join(rootPath, CONFIG.isProduction
-      ? 'dist/client'
-      : 'client')
+    client: path.join(rootPath, 'client')
   }
 });
 
