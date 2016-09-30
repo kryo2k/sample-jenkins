@@ -10,12 +10,9 @@ ThingSchema = new Schema({
   name: {
     type: String,
     required: true
-  },
-  created: {
-    type: Date,
-    default: Date.now
   }
-});
+},
+{ timestamps: true });
 
 ThingSchema.virtual('profile')
 .get(function () {
@@ -35,7 +32,7 @@ ThingSchema.virtual('detail')
 
 ThingSchema.statics = {
   FIELDS_PROFILE: ['_id', 'name'],
-  FIELDS_DETAIL:  ['_id', 'name', 'created']
+  FIELDS_DETAIL:  ['_id', 'name', 'createdAt', 'updatedAt']
 };
 
 ThingSchema.methods = {

@@ -12,7 +12,11 @@
     </tr>
     <tr>
       <td align="right"><b>Created:</b></td>
-      <td ng-bind="thing.created|date:'short'"></td>
+      <td ng-bind="thing.createdAt|date:'short'"></td>
+    </tr>
+    <tr ng-if="thing.updatedAt">
+      <td align="right"><b>Updated:</b></td>
+      <td ng-bind="thing.updatedAt|date:'short'"></td>
     </tr>
     <tr>
       <td></td>
