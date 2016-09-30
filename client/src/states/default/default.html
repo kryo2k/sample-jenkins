@@ -12,18 +12,18 @@
             <a class="link-row" ui-sref="app.detail({ id: thing._id })" ng-bind="thing.name"></a>
           </div>
           <div class="col-xs-3 text-right">
-            <button class="btn btn-danger" ui-sref="app.delete({ id: thing._id})"><span class="glyphicon glyphicon-remove"></span> <span class="hidden-xs">Remove</span></button>
+            <button id="removeExistingThing-{{thing._id}}" class="btn btn-danger" ui-sref="app.delete({ id: thing._id})"><span class="glyphicon glyphicon-remove"></span> <span class="hidden-xs">Remove</span></button>
           </div>
         </div>
       </div>
 
       <div ng-if="things.length === 0" class="text-center">
-        <p>There are currently no things available, try <a ui-sref="app.create">adding one</a>.</p>
+        <p id="noItemsAvailable">There are currently no things available, try <a ui-sref="app.create">adding one</a>.</p>
       </div>
 
       <hr />
 
-      <button class="btn btn-lg btn-success" ui-sref="app.create"><span class="glyphicon glyphicon-plus"></span> Create new</button>
+      <button id="createNewThing" class="btn btn-lg btn-success" ui-sref="app.create"><span class="glyphicon glyphicon-plus"></span> Create new</button>
     </div>
   </div>
 </div>

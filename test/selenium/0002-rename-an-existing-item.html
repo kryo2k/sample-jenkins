@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<title>0002-rename-an-existing-item</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">0002-rename-an-existing-item</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=I'm a teapot</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>link=I'm a teapot</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@id='existingThingName']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@id='existingThingName']</td>
+	<td>I was a teapot. Now i'm not.</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@id='existingThingSaveChanges']</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

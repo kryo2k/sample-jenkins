@@ -9,7 +9,7 @@
       </tr>
       <tr>
         <td align="right"><b>Name:</b></td>
-        <td><input class="form-control" type="text" ng-model="thing.name" /></td>
+        <td><input id="existingThingName" class="form-control" type="text" ng-model="thing.name" /></td>
       </tr>
       <tr>
         <td align="right"><b>Created:</b></td>
@@ -22,7 +22,7 @@
       <tr ng-show="detailForm.$dirty">
         <td></td>
         <td>
-          <button type="submit" class="btn btn-success">Save changes</button>
+          <button id="existingThingSaveChanges" type="submit" class="btn btn-success">Save changes</button>
         </td>
       </tr>
     </table>
@@ -31,4 +31,4 @@
 
 <hr />
 
-<a ui-sref="app.default"><span class="glyphicon glyphicon-backward"></span> Go back and view all</a>
+<a ui-sref="app.default" id="existingThingGoBack"><span class="glyphicon glyphicon-backward"></span> Go back and view all</a>

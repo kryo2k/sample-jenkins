@@ -1,13 +1,13 @@
-<form ng-submit="submit()">
+<form name="createForm" ng-submit="submit()">
   <dl>
     <dt>Name of thing:</dt>
-    <dd><input class="form-control input-lg" type="text" ng-model="model.name" placeholder="Something.."></dd>
+    <dd><input id="newThingName" class="form-control input-lg" type="text" ng-model="model.name" placeholder="Something.."></dd>
   </dl>
 
   <dl>
     <div class="btn-group">
-      <button class="btn btn-lg btn-success" type="submit">Create</button>
-      <button class="btn btn-lg btn-default" type="button" ui-sref="app.default">Cancel</button>
+      <button id="createThingSubmit" class="btn btn-lg btn-success" type="submit">Create</button>
+      <button id="createThingCancel" class="btn btn-lg btn-default" type="button" ui-sref="app.default">Cancel</button>
     </div>
   </dl>
 
