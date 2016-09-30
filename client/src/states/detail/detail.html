@@ -14,7 +14,7 @@
       <td align="right"><b>Created:</b></td>
       <td ng-bind="thing.createdAt|date:'short'"></td>
     </tr>
-    <tr ng-if="thing.updatedAt">
+    <tr ng-if="thing.updatedAt !== thing.createdAt">
       <td align="right"><b>Updated:</b></td>
       <td ng-bind="thing.updatedAt|date:'short'"></td>
     </tr>
