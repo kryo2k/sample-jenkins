@@ -33,11 +33,14 @@ module.exports = (app, server) => {
   app.use(cookieParser());
   app.use(favicon(path.join(config.path.client, 'assets/favicon.png')));
   app.use(morgan(config.isDevelopment ? 'dev' : 'common'));
-  app.use(express.static(config.path.client));
 
-  // if (config.isDevelopment) { // only use if in dev-mode
-  //   app.use(liveReload());
-  // }
+  if(config.isDevelopment) { // only use if in dev-mode
+    app.use(liveReload());
+    app.use(express.static(config.path.temp));
+  }
+
+  // add common statics
+  app.use(express.static(config.path.client));
 
   // configure all routes
   app.use('/api', require('../api'));

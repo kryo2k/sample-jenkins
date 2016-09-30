@@ -1,28 +1,29 @@
-<div ng-init="reload()">
+<div class="state-default" ng-init="reload()">
   <div ng-switch on="isLoading">
-    <div ng-switch-when="true">
+    <div ng-switch-when="true" class="text-center">
       <p>Please wait, loading things..</p>
     </div>
 
     <div ng-switch-default>
-      <table ng-if="things.length > 0">
-        <tr ng-repeat="thing in things">
-          <td>
-            <a ui-sref="app.detail({ id: thing._id })" ng-bind="thing.name"></a>
-          </td>
-          <td>
-            <button ui-sref="app.delete({ id: thing._id})">Delete</button>
-          </td>
-        </tr>
-      </table>
 
-      <div ng-if="things.length === 0">
+      <div ng-if="things.length > 0">
+        <div class="row spaced-row" ng-repeat="thing in things">
+          <div class="col-xs-9">
+            <a class="link-row" ui-sref="app.detail({ id: thing._id })" ng-bind="thing.name"></a>
+          </div>
+          <div class="col-xs-3 text-right">
+            <button class="btn btn-danger" ui-sref="app.delete({ id: thing._id})"><span class="glyphicon glyphicon-remove"></span> <span class="hidden-xs">Remove</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div ng-if="things.length === 0" class="text-center">
         <p>There are currently no things available, try <a ui-sref="app.create">adding one</a>.</p>
       </div>
 
       <hr />
 
-      <a ui-sref="app.create">Create new</a>
+      <button class="btn btn-lg btn-success" ui-sref="app.create"><span class="glyphicon glyphicon-plus"></span> Create new</button>
     </div>
   </div>
 </div>

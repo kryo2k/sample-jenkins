@@ -5,36 +5,49 @@
   <meta charset="utf-8">
   <base href="/">
   <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
-
-  <!-- build:css dist/vendor.css -->
+  <!-- build:css(client) vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
   <!-- endbuild -->
-
-  <!-- build:css dist/app.css -->
+  <!-- build:css(.tmp) app.css -->
+  <link rel="stylesheet" href="app.build.css">
   <!-- endbuild -->
 </head>
 <body>
 
   <div ui-view="">
-    <p>Please wait, loading application..</p>
+
+    <div class="text-center">
+      <div class="page-header">
+        <h3>Please wait</h3>
+      </div>
+      <p class="text-small">Loading all the goodies..</p>
+    </div>
   </div>
 
-  <!-- build:js dist/vendor.js -->
-  <script type="text/javascript" src="vendor/angular/angular.js"></script>
-  <script type="text/javascript" src="vendor/angular-resource/angular-resource.js"></script>
-  <script type="text/javascript" src="vendor/angular-route/angular-route.js"></script>
-  <script type="text/javascript" src="vendor/angular-sanitize/angular-sanitize.js"></script>
-  <script type="text/javascript" src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
-  <script type="text/javascript" src="vendor/angular-messages/angular-messages.js"></script>
+  <!-- build:js(client) vendor.js -->
+  <!-- bower:js -->
+  <script src="vendor/angular/angular.js"></script>
+  <script src="vendor/angular-messages/angular-messages.js"></script>
+  <script src="vendor/angular-resource/angular-resource.js"></script>
+  <script src="vendor/angular-route/angular-route.js"></script>
+  <script src="vendor/angular-sanitize/angular-sanitize.js"></script>
+  <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <!-- endbower -->
   <!-- endbuild -->
-
-  <!-- build:js dist/app.js -->
-  <script type="text/javascript" src="src/app.js"></script>
-  <script type="text/javascript" src="src/factory/http-normalizer.js"></script>
-  <script type="text/javascript" src="src/resources/thing.js"></script>
-  <script type="text/javascript" src="src/states/default/default.js"></script>
-  <script type="text/javascript" src="src/states/create/create.js"></script>
-  <script type="text/javascript" src="src/states/delete/delete.js"></script>
-  <script type="text/javascript" src="src/states/detail/detail.js"></script>
+  <!-- build:js(.tmp) app.js -->
+  <!-- injector:js -->
+  <script src="src/app.js"></script>
+  <script src="src/factory/http-normalizer.js"></script>
+  <script src="src/resources/thing.js"></script>
+  <script src="src/states/create/create.js"></script>
+  <script src="src/states/default/default.js"></script>
+  <script src="src/states/delete/delete.js"></script>
+  <script src="src/states/detail/detail.js"></script>
+  <!-- endinjector -->
+  <!-- injector:tpl -->
+  <!-- endinjector -->
   <!-- endbuild -->
 </body>
 </html>

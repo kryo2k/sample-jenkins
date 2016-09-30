@@ -3,7 +3,8 @@ angular.module('sampleJenkinsApp', [
   'ngResource',
   'ngSanitize',
   'ngMessages',
-  'ui.router'
+  'ui.router',
+  'ui.bootstrap'
 ])
 .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 

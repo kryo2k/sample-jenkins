@@ -1,9 +1,9 @@
 <p ng-if="!thing">Unable to locate the thing you're looking for.</p>
 
-<div ng-if="thing">
+<div ng-if="thing" class="text-center">
 
-  <p>Are you sure you want to delete {{thing.name|json}}?</p>
+  <p class="lead">Are you sure you want to <u class="text-danger">remove</u> <mark>{{thing.name}}</mark> permanently</abbr>?</p>
 
-  <button ng-click="confirm()">Yes</button>
-  <button ui-sref="app.default">No</button>
+  <button class="btn btn-lg btn-danger" ng-click="confirm()"><span class="glyphicon glyphicon-ok"></span> Yes</button>
+  <button class="btn btn-lg btn-default" ui-sref="app.default"><span class="glyphicon glyphicon-remove"></span> No</button>
 </div>

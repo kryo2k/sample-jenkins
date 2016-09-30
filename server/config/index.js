@@ -35,6 +35,7 @@ module.exports = exports = merge(CONFIG, {
   },
   path: {
     root:   rootPath,
+    temp: path.join(rootPath, '.tmp'),
     server: path.join(rootPath, 'server'),
     client: path.join(rootPath, 'client')
   }
@@ -43,3 +44,7 @@ module.exports = exports = merge(CONFIG, {
 CONFIG.isDevelopment = (CONFIG.env === 'development');
 CONFIG.isProduction  = (CONFIG.env === 'production');
 CONFIG.isTesting     = (CONFIG.env === 'test');
+
+if(CONFIG.isProduction) { // serve from the compiled dist directory
+  CONFIG.path.client = path.join(rootPath, 'dist');
+}

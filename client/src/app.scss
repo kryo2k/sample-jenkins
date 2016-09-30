@@ -1,0 +1,19 @@
+$icon-font-path: "assets/fonts/";
+
+@import '../vendor/bootstrap-sass/assets/stylesheets/bootstrap';
+
+.table {
+  &.borderless {
+    td,
+    th {
+      border: none;
+    }
+  }
+}
+
+// injector
+@import 'states/create/create.scss';
+@import 'states/default/default.scss';
+@import 'states/delete/delete.scss';
+@import 'states/detail/detail.scss';
+// endinjector
