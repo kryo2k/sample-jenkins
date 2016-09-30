@@ -6,12 +6,13 @@ angular.module('sampleJenkinsApp')
     controller: 'CreateCtrl as $thingCtrl'
   });
 })
-.controller('CreateCtrl', function ($scope, $state, $thing) {
+.controller('CreateCtrl', function ($scope, $state, Thing) {
+  $scope.model = new Thing();
+
   $scope.submit = function () {
-    return $thing.create($scope.model)
-      .then(function (result) {
-        $state.go('app.default');
-        return result;
-      });
+    return $scope.model.$save().then(function (result) {
+      $state.go('app.default');
+      return result;
+    });
   };
 });

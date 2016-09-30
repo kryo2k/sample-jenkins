@@ -11,7 +11,7 @@ exports.search = (req, res, next) => {
 };
 
 exports.detail = (req, res, next) => {
-  res.json(req.thing);
+  res.json(req.thing.detail);
 };
 
 exports.create = (req, res, next) => {

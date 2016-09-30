@@ -25,8 +25,17 @@ ThingSchema.virtual('profile')
   }, {});
 });
 
+ThingSchema.virtual('detail')
+.get(function () {
+  return this.constructor.FIELDS_DETAIL.reduce((p, field) => {
+    p[field] = this[field];
+    return p;
+  }, {});
+});
+
 ThingSchema.statics = {
-  FIELDS_PROFILE: ['_id', 'name']
+  FIELDS_PROFILE: ['_id', 'name'],
+  FIELDS_DETAIL:  ['_id', 'name', 'created']
 };
 
 ThingSchema.methods = {

@@ -10,7 +10,7 @@ router.param('thingId', mw.thingFromParam());
 router.get('/',            ctrl.search);
 router.get('/:thingId',    ctrl.detail);
 router.post('/',           ctrl.create);
-router.put('/:thingId',    ctrl.update);
+router.post('/:thingId',   ctrl.update);
 router.delete('/:thingId', ctrl.delete);
 
 module.exports = router;

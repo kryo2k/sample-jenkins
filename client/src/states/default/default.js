@@ -6,7 +6,7 @@ angular.module('sampleJenkinsApp')
     controller: 'DefaultCtrl as $defaultCtrl'
   });
 })
-.controller('DefaultCtrl', function ($scope, $thing) {
+.controller('DefaultCtrl', function ($scope, Thing) {
 
   var
   loading = false,
@@ -37,8 +37,8 @@ angular.module('sampleJenkinsApp')
   $scope.reload = function () {
     ctrl.markLoading();
 
-    return $thing.query()
-    // return $thing.query({ _id: 'x' }) // throws CastError
+    return Thing.query().$promise
+    // return Thing.query({ _id: 'x' }).$promise // throws CastError
       .then(function (things) {
         $scope.things = things;
         ctrl.markFinished();
