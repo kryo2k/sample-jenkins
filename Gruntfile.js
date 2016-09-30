@@ -4,11 +4,9 @@ module.exports = (grunt) => {
 
   grunt.loadNpmTasks('grunt-angular-templates');
   grunt.loadNpmTasks('grunt-ng-annotate');
-  // grunt.loadNpmTasks('grunt-asset-injector');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-svgmin');
   grunt.loadNpmTasks('grunt-injector');
-  grunt.loadNpmTasks('grunt-rev');
   grunt.loadNpmTasks('grunt-wiredep');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');

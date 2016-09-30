@@ -33,13 +33,11 @@
     "method-override": "latest",
     "mongoose": "latest",
     "morgan": "latest",
-    "node-mocks-http": "latest",
     "serve-favicon": "latest"
   },
   "devDependencies": {
     "grunt": "latest",
     "grunt-angular-templates": "latest",
-    "grunt-asset-injector": "latest",
     "grunt-concurrent": "latest",
     "grunt-contrib-clean": "latest",
     "grunt-contrib-concat": "latest",
@@ -53,10 +51,10 @@
     "grunt-contrib-watch": "latest",
     "grunt-injector": "^1.0.1",
     "grunt-ng-annotate": "latest",
-    "grunt-rev": "latest",
     "grunt-svgmin": "latest",
     "grunt-usemin": "latest",
     "grunt-wiredep": "latest",
+    "node-mocks-http": "latest",
     "should": "latest",
     "supertest": "latest"
   },
